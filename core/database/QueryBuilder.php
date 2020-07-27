@@ -17,5 +17,15 @@ class QueryBuilder
 
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+
+    public function insert($table, $data)
+    {
+//        $data  = [
+//            'subject' => 'posruka',
+//            'message' => 'kako ste?'
+//        ];
+
+        //INSERT INTO 'messages'
+    }
 }
 
