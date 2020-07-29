@@ -20,12 +20,16 @@ class QueryBuilder
 
     public function insert($table, $data)
     {
-//        $data  = [
-//            'subject' => 'posruka',
-//            'message' => 'kako ste?'
-//        ];
 
-        //INSERT INTO 'messages'
+        $sql = sprintf("INSERT INTO %s (%s) VALUES (%s)",
+            $table,
+            implode(", " , array_keys($data)),
+            ":" . implode(", :" , array_keys($data)));
+
+        $query = $this->pdo->prepare($sql);
+
+        $query->execute($data);
+
     }
 }
 

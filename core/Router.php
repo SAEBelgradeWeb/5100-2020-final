@@ -26,9 +26,22 @@ class Router {
     public function direct($uri, $method)
     {
         if(array_key_exists($uri, $this->routes[$method])) {
-            return $this->routes[$method][$uri];
+
+            $controllerArr = explode("@", $this->routes[$method][$uri]);
+            return $this->call(...$controllerArr);
+
         }
         return "views/404.view.php";
+    }
+
+    protected function call($controllerName, $methodName) {
+        //PagesConroller, contact
+        $controller = new $controllerName;
+        if( !method_exists($controller, $methodName)) {
+            throw new Exception('This method does not exist on a controller');
+        }
+        return $controller->$methodName();
+
     }
 }
 
