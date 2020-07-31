@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Core\Database;
+
 class QueryBuilder
 {
     public $pdo;
@@ -15,7 +17,7 @@ class QueryBuilder
 
         $query->execute();
 
-        return $query->fetchAll(PDO::FETCH_OBJ);
+        return $query->fetchAll(\PDO::FETCH_OBJ);
     }
 
     public function insert($table, $data)

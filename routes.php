@@ -27,4 +27,4 @@ $router->get('', 'PagesController@home');
 $router->get('about', 'PagesController@about');
 $router->get('contact', 'PagesController@contact');
 //$router->get('api/tasks', 'controllers/api.tasks.php');
-//$router->post('contact-submit', 'controllers/contact.submit.php');
+$router->post('contact-submit', 'PagesController@contactFormSubmit');

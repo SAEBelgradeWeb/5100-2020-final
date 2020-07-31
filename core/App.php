@@ -1,4 +1,5 @@
 <?php
+namespace App\Core;
 
 class App {
 
@@ -12,7 +13,7 @@ class App {
     public static function get($key)
     {
         if(! array_key_exists($key, static::$registry)) {
-            throw new Exception('This key does not exist');
+            throw new \Exception('This key does not exist');
         }
         return static::$registry[$key];
     }

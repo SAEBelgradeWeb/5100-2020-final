@@ -1,6 +1,8 @@
 <?php
 require_once "core/functions.php";
-
+use App\Core\App;
+use App\Core\Database\Database;
+use App\Core\Database\QueryBuilder;
 
 App::register('config', require_once "config.php");
 
