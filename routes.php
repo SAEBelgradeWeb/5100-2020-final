@@ -36,6 +36,15 @@ $router->get('posts/edit', 'PostsController@edit');
 $router->post('posts/edit', 'PostsController@update');
 $router->get('posts/destroy', 'PostsController@destroy');
 
+//USERS
+$router->get('users', 'UsersController@index');
+$router->get('users/create', 'UsersController@create');
+$router->post('users', 'UsersController@store');
+$router->get('users/show', 'UsersController@show');
+$router->get('users/edit', 'UsersController@edit');
+$router->post('users/edit', 'UsersController@update');
+$router->get('users/destroy', 'UsersController@destroy');
+
 
 
 //$router->post('ovo/je/ruta', 'OvoJeKontroler@metodUKontroleru');
