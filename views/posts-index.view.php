@@ -1,18 +1,22 @@
 <?php require_once "views/partials/header.php"; ?>
 
-
 <table class="table">
-    <th>
-        <td>ID</td>
-        <td>Title</td>
-    </th>
+    <thead class="thead-dark">
     <tr>
-        <td>12</td>
-        <td>Neki subject posta</td>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Actions</th>
     </tr>
+    </thead>
+    <?php foreach ($posts as $post): ?>
+        <tr>
+            <td><?= $post->id ?></td>
+            <td><?= $post->title ?></td>
+            <td><a href="/posts/show?id=<?= $post->id ?>" class="btn btn-info">Show</a> <a href="/posts/show?id=<?=
+                $post->id ?>" class="btn btn-danger">Delete</a></td>
+        </tr>
+    <?php endforeach; ?>
 </table>
-
-
 
 
 <?php require_once "views/partials/footer.php"; ?>

@@ -1,4 +1,5 @@
 <?php require_once "views/partials/header.php"; ?>
+<h1>Welcome to <?= $siteName ?></h1>
 
 <ul>
     <?php foreach ($tasks as $task): ?>

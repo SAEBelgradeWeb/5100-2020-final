@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Core\Database;
+
 class QueryBuilder
 {
     public $pdo;
@@ -15,7 +17,16 @@ class QueryBuilder
 
         $query->execute();
 
-        return $query->fetchAll(PDO::FETCH_OBJ);
+        return $query->fetchAll(\PDO::FETCH_OBJ);
+    }
+
+    public function getOne($table, $id)
+    {
+        $query = $this->pdo->prepare("SELECT * FROM {$table} WHERE id='{$id}'");
+
+        $query->execute();
+
+        return $query->fetch(\PDO::FETCH_OBJ);
     }
 
     public function insert($table, $data)
