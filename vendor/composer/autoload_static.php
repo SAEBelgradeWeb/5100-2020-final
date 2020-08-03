@@ -8,6 +8,7 @@ class ComposerStaticInitec29dcf9c5812542b2765f334b01268b
 {
     public static $classMap = array (
         'App' => __DIR__ . '/../..' . '/core/App.php',
+        'App\\Controllers\\PostsController' => __DIR__ . '/../..' . '/controllers/PostsController.php',
         'ComposerAutoloaderInitec29dcf9c5812542b2765f334b01268b' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInitec29dcf9c5812542b2765f334b01268b' => __DIR__ . '/..' . '/composer/autoload_static.php',
