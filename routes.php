@@ -36,6 +36,15 @@ $router->get('posts/edit', 'PostsController@edit');
 $router->post('posts/edit', 'PostsController@update');
 $router->get('posts/destroy', 'PostsController@destroy');
 
+
+//API POSTS
+$router->get('api/posts', 'ApiPostsController@index');
+$router->post('api/posts', 'ApiPostsController@store');
+$router->get('api/posts/show', 'ApiPostsController@show');
+$router->post('api/posts/edit', 'ApiPostsController@update');
+$router->get('api/posts/destroy', 'ApiPostsController@destroy');
+
+
 //USERS
 $router->get('users', 'UsersController@index');
 $router->get('users/create', 'UsersController@create');
