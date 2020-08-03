@@ -34,9 +34,11 @@ $router->post('posts', 'PostsController@store');
 $router->get('posts/show', 'PostsController@show');
 $router->get('posts/edit', 'PostsController@edit');
 $router->post('posts/edit', 'PostsController@update');
-$router->post('posts/destroy', 'PostsController@destroy');
+$router->get('posts/destroy', 'PostsController@destroy');
 
-$router->post('ovo/je/ruta', 'OvoJeKontroler@metodUKontroleru');
+
+
+//$router->post('ovo/je/ruta', 'OvoJeKontroler@metodUKontroleru');
 
 
 // 5 or 7

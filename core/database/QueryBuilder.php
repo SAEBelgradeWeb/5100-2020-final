@@ -13,7 +13,7 @@ class QueryBuilder
 
     public function getAll($table)
     {
-        $query = $this->pdo->prepare("SELECT * FROM {$table}");
+        $query = $this->pdo->prepare("SELECT * FROM {$table} ORDER BY id DESC");
 
         $query->execute();
 
@@ -41,6 +41,38 @@ class QueryBuilder
 
         $query->execute($data);
 
+    }
+
+    public function update($table, $data)
+    {
+        $id = $data['id'];
+        unset($data['id']);
+
+        $preparedParams = array_map(function($item) {
+            return $item . "=:" . $item;
+        }, array_keys($data));
+
+        $sql = sprintf("UPDATE %s SET %s WHERE id = '%s'",
+            $table,
+            implode(', ', $preparedParams),
+            $id);
+
+
+        $query = $this->pdo->prepare($sql);
+
+        $query->execute($data);
+
+    }
+
+    public function delete($table, $id)
+    {
+        // DELETE FROM table WHERE id
+        $sql = sprintf("DELETE FROM %s WHERE id='%s'",
+            $table,
+            $id);
+
+        $query = $this->pdo->prepare($sql);
+        $query->execute();
     }
 }
 
