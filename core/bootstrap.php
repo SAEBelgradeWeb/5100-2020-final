@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "core/functions.php";
 use App\Core\App;
 use App\Core\Database\Database;

@@ -29,6 +29,23 @@ class QueryBuilder
         return $query->fetch(\PDO::FETCH_OBJ);
     }
 
+    public function getOneByField($table, $parameters)
+    {
+
+        $params = '';
+        foreach($parameters as $key => $parameter) {
+            $params.= "$key = '$parameter' AND ";
+        }
+        $params = substr($params, 0, -5);
+
+        $query = $this->pdo->prepare("SELECT * FROM {$table} WHERE {$params}");
+
+
+        $query->execute();
+
+        return $query->fetch(\PDO::FETCH_OBJ);
+    }
+
     public function insert($table, $data)
     {
 

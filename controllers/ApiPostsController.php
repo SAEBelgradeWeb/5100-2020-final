@@ -6,7 +6,9 @@ class ApiPostsController {
 
     public function index()
     {
-        $posts = App::get('database')->getAll('posts');
+        $user = api_check_auth();
+        dd($user);
+        $posts = App::get('database')->getOneByField('posts', ['user_id' => $user->id]);
 
         echo json_encode($posts);
     }

@@ -13,4 +13,9 @@
 
 
 <div class="container">
+    <?php if(isset($_SESSION['user'])) : ?>
+    User: <?= $_SESSION['user']->name; ?>
+    <?php else: ?>
+    Guest
+    <?php endif;?>
 <?php require_once "navigation.php"; ?>

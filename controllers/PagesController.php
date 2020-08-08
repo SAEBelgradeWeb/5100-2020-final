@@ -17,6 +17,7 @@ class PagesController {
 
     public function about()
     {
+        check_auth();
         return view('about');
     }
 

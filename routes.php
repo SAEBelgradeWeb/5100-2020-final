@@ -22,6 +22,11 @@
 //    ]
 //];
 //
+$router->get('login', 'AuthController@login_form');
+$router->post('login', 'AuthController@login');
+$router->get('register', 'AuthController@register_form');
+$router->post('register', 'AuthController@register');
+$router->get('logout', 'AuthController@logout');
 
 $router->get('', 'PagesController@home');
 $router->get('about', 'PagesController@about');
